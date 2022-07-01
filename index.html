@@ -12,8 +12,9 @@
       <div v-if="testRunning == true">
         <h2>{{randomSentence}}</h2>
 
-        <input type="text" />
-        {{timeElapsed}}
+        <input type="text" v-model="userInput" v-if="!finishedTyping" />
+        <br />
+        {{timeElapsed}} Seconds
       </div>
 
       <div v-if="testRunning == false"></div>

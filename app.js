@@ -9,6 +9,7 @@ var app = new Vue({
   data: {
     testRunning: false,
     randomSentence: "",
+    userInput: "",
     timeElapsed: 0,
     startTime: 0,
     endTime: 0,
@@ -36,9 +37,9 @@ var app = new Vue({
     // use it like a variable (v-if="finishedTyping")
     finishedTyping: function () {
       // you probably wanna use your variable here in place of these awful ones
-      if (this.SENTENCE_TO_BE_TYPED == this.SENTENCE_USER_IS_TYPING) {
-        this.calculateTotalTime();
+      if (this.randomSentence == this.userInput) {
         this.endTime = new Date();
+        this.calculateTotalTime();
         return true;
       } else {
         return false;
