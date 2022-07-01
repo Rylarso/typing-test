@@ -1,15 +1,15 @@
 const SENTENCES = [
-  "The quick brown fox jumped over the fence.",
+  'The quick brown fox jumped over the fence.',
   "It's been over a fence, I'm starting to think that tractor is never coming back.",
-  "What do you believe to be the answer to my problems?",
+  'What do you believe to be the answer to my problems?',
 ];
 
 var app = new Vue({
-  el: "#app",
+  el: '#app',
   data: {
     testRunning: false,
-    randomSentence: "",
-    userInput: "",
+    randomSentence: '',
+    userInput: '',
     timeElapsed: 0,
     startTime: 0,
     endTime: 0,
@@ -41,10 +41,11 @@ var app = new Vue({
     },
     resetTest: function () {
       this.testRunning = false;
-      this.userInput = "";
+      this.userInput = '';
       this.timeElapsed = 0;
       this.startTime = 0;
       this.endTime = 0;
+      this.wordsPerMinute = 0;
     },
     resetWithNewSentence: function () {
       this.resetTest();
