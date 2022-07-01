@@ -14,15 +14,11 @@
 
         <input type="text" v-model="userInput" v-if="!finishedTyping" />
         <br />
-
-        <h2 v-if="finishedTyping">{{timeElapsed}} Seconds</h2>
-        <h2 v-if="finishedTyping">{{wordsPerMinute}} wpm</h2>
-      </div>
-
-      <div v-if="finishedTyping">
-        <button @click="resetTest()">Start Over, Same Sentence</button>
-        <button @click="resetWithNewSentence()">
-          Start Over,Different Sentence
+        {{timeElapsed}} Seconds
+        <br />
+        {{wordsPerMinute}} WPM
+        <button v-on:click="resetWithNewSentence()">
+          Reset With New Sentence
         </button>
       </div>
 
