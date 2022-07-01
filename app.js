@@ -36,7 +36,6 @@ var app = new Vue({
       let str = this.randomSentence;
       let wordCount = str.trim().split(/\s+/).length;
       let wpm = wordCount / y;
-      console.log(wpm);
       this.wordsPerMinute = Math.round(wpm);
     },
     resetTest: function () {
@@ -45,6 +44,7 @@ var app = new Vue({
       this.timeElapsed = 0;
       this.startTime = 0;
       this.endTime = 0;
+      this.wordsPerMinute = 0;
     },
     resetWithNewSentence: function () {
       this.resetTest();
