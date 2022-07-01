@@ -7,8 +7,13 @@
     <div id="app">
       <h1>Typing Test</h1>
       <div v-if="testRunning == false">
-        <button v-on:click="testRunning = true">Start Test</button>
-        <button>Get Random Sentence</button>
+        <button v-on:click="testRunning = true, startRace()">Start Test</button>
+      </div>
+      <div v-if="testRunning == true">
+        <h2>{{randomSentence}}</h2>
+
+        <input type="text" />
+        {{timeElapsed}}
       </div>
 
       <div v-if="testRunning == false"></div>
