@@ -13,6 +13,7 @@ var app = new Vue({
     timeElapsed: 0,
     startTime: 0,
     endTime: 0,
+    wordsPerMinute: 0,
   },
   methods: {
     startRace: function () {
@@ -28,9 +29,27 @@ var app = new Vue({
       // seconds instead of miliseconds
       this.timeElapsed /= 1000;
       Math.round(this.timeElapsed);
+
+      let x = this.timeElapsed;
+      let y = x / 60;
+
+      let str = this.randomSentence;
+      let wordCount = str.trim().split(/\s+/).length;
+      let wpm = wordCount / y;
+      console.log(wpm);
+      this.wordsPerMinute = Math.round(wpm);
     },
-    resetTest: function () {},
-    resetWithNewSentence: function () {},
+    resetTest: function () {
+      this.testRunning = false;
+      this.userInput = "";
+      this.timeElapsed = 0;
+      this.startTime = 0;
+      this.endTime = 0;
+    },
+    resetWithNewSentence: function () {
+      this.resetTest();
+      this.getRandomSentence();
+    },
   },
   computed: {
     // this function runs whenever the sentence the user is typing changes
