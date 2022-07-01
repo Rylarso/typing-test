@@ -15,6 +15,9 @@
         <input type="text" v-model="userInput" v-if="!finishedTyping" />
         <br />
         {{timeElapsed}} Seconds
+        <button v-on:click="resetWithNewSentence()">
+          Reset With New Sentence
+        </button>
       </div>
 
       <div v-if="testRunning == false"></div>

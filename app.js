@@ -30,7 +30,14 @@ var app = new Vue({
       Math.round(this.timeElapsed);
     },
     resetTest: function () {},
-    resetWithNewSentence: function () {},
+    resetWithNewSentence: function () {
+        this.timeElapsed = 0
+        this.startTime = 0
+        this.endTime = 0
+        this.getRandomSentence();
+        this.startRace();
+        this.userInput = ""
+    },
   },
   computed: {
     // this function runs whenever the sentence the user is typing changes
