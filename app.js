@@ -7,6 +7,8 @@ const SENTENCES = [
 var app = new Vue({
     el: "#app",
     data:{
+        testRunning: false,
+        
     },
     methods:{
         startRace: function () {

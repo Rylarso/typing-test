@@ -6,6 +6,12 @@
   <body>
     <div id="app">
       <h1>Typing Test</h1>
+      <div v-if="testRunning == false">
+        <button v-on:click="testRunning = true">Start Test</button>
+        <button>Get Random Sentence</button>
+      </div>
+
+      <div v-if="testRunning == false"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="app.js"></script>
